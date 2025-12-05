@@ -18,18 +18,19 @@ class op {
         Scanner sc = new Scanner(System.in);
         op op = new op();
         System.out.println("-----CALCULADORA-----");
-        System.out.print("Digite o primeiro valor para realizar a operação.");
+        System.out.print("Digite o primeiro valor para realizar a operação: ");
         double valor1 = sc.nextDouble();
-        System.out.print("Digite agora o segundo valor para realizar a operação");
+        System.out.print("Digite agora o segundo valor para realizar a operação: ");
         double valor2 = sc.nextDouble();
         System.out.println("-----------------------------------------");
-        System.out.println("Informe a operação desejada que deseja fazer");
+        System.out.println("Informe a operação desejada que deseja fazer: ");
         System.out.println("1 - Somar");
         System.out.println("2 - Subtrair");
         System.out.println("3 - Multiplicar");
         System.out.println("4 - dividir");
         System.out.println("------------------------------------------");
         int opcao = sc.nextInt();
+        sc.close();
         switch (opcao) {
             case 1: 
                 System.out.println("A soma entre os valores é: " + op.somar(valor1,valor2));
@@ -43,7 +44,9 @@ class op {
             case 4:
                 System.out.println("A divisão entre o primeiro valor e o segundo é: " + op.dividir(valor1, valor2));
                 break;
-        }
-        sc.close();
+            default:
+                System.out.println("Operação Invalida:");
+                return;
+        } 
     }
 }
