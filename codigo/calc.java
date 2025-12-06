@@ -1,6 +1,6 @@
 package codigo;
 import java.util.Scanner;
-class op {
+class calculadora {
     public double somar (Double valor1, Double valor2) {
         return valor1 + valor2;
     }
@@ -13,22 +13,31 @@ class op {
     public double dividir (double valor1, double valor2) {
         return valor1 / valor2;
     }
+    public static void exibir(String texto) {
+        System.out.print(texto);
+    }
 
     public static void main(String[] args) {
+        String menu1 ="""
+                -----CALCULADORA-----
+                Digite o primeiro valor para realizar a operação:...""";
+        String menu2 = "Digite agora o segundo valor para realizar a operação:...";
+        String menu3 = """
+                -----------------------------------------
+                Informe a operação desejada que deseja fazer: 
+                1 - Somar
+                2 - Subtrair
+                3 - Multiplicar
+                4 - dividir
+                ------------------------------------------
+                :...""";
         Scanner sc = new Scanner(System.in);
-        op op = new op();
-        System.out.println("-----CALCULADORA-----");
-        System.out.print("Digite o primeiro valor para realizar a operação: ");
+        calculadora op = new calculadora();
+        exibir(menu1);        
         double valor1 = sc.nextDouble();
-        System.out.print("Digite agora o segundo valor para realizar a operação: ");
+        exibir(menu2);
         double valor2 = sc.nextDouble();
-        System.out.println("-----------------------------------------");
-        System.out.println("Informe a operação desejada que deseja fazer: ");
-        System.out.println("1 - Somar");
-        System.out.println("2 - Subtrair");
-        System.out.println("3 - Multiplicar");
-        System.out.println("4 - dividir");
-        System.out.println("------------------------------------------");
+        exibir(menu3);
         int opcao = sc.nextInt();
         sc.close();
         switch (opcao) {
